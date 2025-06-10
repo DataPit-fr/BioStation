@@ -1,6 +1,6 @@
 ﻿# 🛣️ Roadmap – BioStation 🐦🎙️
 
-![Roadmap Progress](https://img.shields.io/badge/Roadmap-🚧%2030%25%20done-yellow)
+![Roadmap](https://DataPit-fr.github.io/BioStation/roadmap.svg)
 
 ## 🎯 Objectif
 Créer une station autonome capable d'enregistrer des sons, de reconnaître les chants d'oiseaux en temps réel à l'aide de machine learning, et de collecter des données environnementales via du C embarqué.
