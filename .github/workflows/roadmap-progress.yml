@@ -1,0 +1,30 @@
+﻿name: 🛠️ Generate Roadmap Progress Badge
+
+on:
+  push:
+    paths:
+      - 'roadmap.md'
+      - '.github/workflows/roadmap-progress.yml'
+
+jobs:
+  generate-badge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Run badge generator
+        run: python scripts/generate_roadmap_badge.py
+
+      - name: Commit badge
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add badges/roadmap.svg
+          git commit -m "🔄 Update roadmap badge" || echo "No changes to commit"
+          git push
