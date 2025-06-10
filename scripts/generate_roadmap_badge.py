@@ -1,9 +1,11 @@
 ﻿import re
 from pathlib import Path
 
-roadmap = Path("roadmap.md").read_text(encoding="utf-8")
-done = len(re.findall(r"- \[[xX]\]", roadmap))
-total = len(re.findall(r"- \[[ xX]\]", roadmap))
+roadmap = Path("README.md").read_text(encoding="utf-8")
+
+done = len(re.findall(r"^\s*[-*]\s+\[x\]", roadmap, re.IGNORECASE | re.MULTILINE))
+total = len(re.findall(r"^\s*[-*]\s+\[[ x]\]", roadmap, re.IGNORECASE | re.MULTILINE))
+
 percent = round((done / total) * 100) if total > 0 else 0
 
 if percent < 25:
