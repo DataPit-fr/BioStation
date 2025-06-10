@@ -25,6 +25,5 @@ svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="150" height="20">
 </svg>
 """
 
-Path("badges").mkdir(exist_ok=True)
-Path("badges/roadmap.svg").write_text(svg, encoding="utf-8")
+Path("roadmap.svg").write_text(svg, encoding="utf-8")
 print(f"✔ Roadmap progress: {done}/{total} → {percent}%")
