@@ -10,7 +10,7 @@ Créer une station autonome capable d'enregistrer des sons, de reconnaître les 
 ## ✅ Phases principales
 
 ### 📌 Phase 1 — Spécifications & Setup
-- [ ] Définir les espèces ciblées (oiseaux locaux)
+- [x] Définir les espèces ciblées (oiseaux locaux)
 - [ ] Lister les besoins (autonomie, stockage, détection, communication)
 - [ ] Choisir le matériel (Raspberry Pi, microcontrôleur, micro, batterie)
 
