@@ -13,6 +13,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
         with:
+          token: ${{ secrets.GH_TOKEN }}
           fetch-depth: 0  # Nécessaire pour manipuler plusieurs branches
 
       - name: Set up Python
@@ -38,6 +39,7 @@ jobs:
           mv tmp_badge.svg roadmap.svg
           git add roadmap.svg
           git commit -m "🔄 Update roadmap badge" || echo "No changes"
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/DataPit-fr/BioStation.git
           git push origin gh-pages
 
           # Retour sur main
