@@ -3,7 +3,7 @@
 on:
   push:
     paths:
-      - 'roadmap.md'
+      - 'README.md'
       - 'scripts/generate_roadmap_badge.py'
 
 jobs:
