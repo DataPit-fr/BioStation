@@ -1,30 +1,44 @@
-﻿name: 🛠️ Generate Roadmap Progress Badge
+﻿name: 🚀 Publish Roadmap Badge to GitHub Pages
 
 on:
   push:
     paths:
       - 'roadmap.md'
-      - '.github/workflows/roadmap-progress.yml'
+      - 'scripts/generate_roadmap_badge.py'
 
 jobs:
-  generate-badge:
+  publish-badge:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Nécessaire pour manipuler plusieurs branches
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
-      - name: Run badge generator
+      - name: Generate badge
         run: python scripts/generate_roadmap_badge.py
 
-      - name: Commit badge
+      - name: Commit badge to gh-pages
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add badges/roadmap.svg
-          git commit -m "🔄 Update roadmap badge" || echo "No changes to commit"
-          git push
+
+          # Sauvegarder badge
+          cp roadmap.svg tmp_badge.svg
+
+          # Passer sur gh-pages
+          git checkout gh-pages
+
+          # Copier et commit le badge
+          mv tmp_badge.svg roadmap.svg
+          git add roadmap.svg
+          git commit -m "🔄 Update roadmap badge" || echo "No changes"
+          git push origin gh-pages
+
+          # Retour sur main
+          git checkout main
