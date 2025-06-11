@@ -11,6 +11,20 @@ Créer une station autonome capable d'enregistrer des sons, de reconnaître les 
 
 ### 📌 Phase 1 — Spécifications & Setup
 - [x] Définir les espèces ciblées (oiseaux locaux)
+      Le pigeon biset (le fameux pigeon des villes)
+      Le moineau domestique
+      le Pigeon Ramier
+      le Merle noir
+      L’étourneau Sansonnet (migrateur partiel)
+      le Martinet noir (migrateur)
+      La mésange charbonnière
+      La mésange bleue
+      L’hirondelle de Fenêtre (migrateur)
+      Le verdier d’Europe
+      Le pigeon Colombin
+      La pie bavarde
+      le Rougequeue noir
+      le Troglodyte Mignon
 - [ ] Lister les besoins (autonomie, stockage, détection, communication)
 - [x] Choisir le matériel (Raspberry Pi, microcontrôleur, micro, batterie)
 
